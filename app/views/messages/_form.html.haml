@@ -1,0 +1,4 @@
+= effective_form_with(model: message, url: room_messages_path(message.room), method: :post, remote: true) do |f|
+  = f.rich_text_area :body
+
+  = f.save 'Create Message'

@@ -35,6 +35,10 @@ Rails.application.routes.draw do
     post :demote, on: :member
   end
 
+  resources :rooms do
+    resources :messages
+  end
+
   namespace :admin do
     resources :clients, except: [:show], concerns: :acts_as_archived
 

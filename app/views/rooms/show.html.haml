@@ -1,0 +1,17 @@
+.card.mb-4
+  .card-body
+    %h5.card-title= @room
+
+    = turbo_stream_from "room-#{@room.id}"
+
+    = turbo_frame_tag "messages" do
+      = render @room.messages
+
+      - if @room.messages.blank?
+        %p
+          %em No messages so far...
+
+.card
+  .card-body
+    %h5.card-title Create message
+    = render 'messages/form', message: @room.messages.new

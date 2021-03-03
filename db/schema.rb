@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_04_220543) do
+ActiveRecord::Schema.define(version: 2021_03_03_214404) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -166,6 +166,12 @@ ActiveRecord::Schema.define(version: 2021_02_04_220543) do
     t.datetime "updated_at"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.integer "room_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "order_items", force: :cascade do |t|
     t.integer "order_id"
     t.string "purchasable_type"
@@ -259,6 +265,12 @@ ActiveRecord::Schema.define(version: 2021_02_04_220543) do
     t.datetime "created_at"
     t.index ["regionable_id"], name: "index_regions_on_regionable_id"
     t.index ["regionable_type", "regionable_id"], name: "index_regions_on_regionable_type_and_regionable_id"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "subscriptions", force: :cascade do |t|

@@ -17,7 +17,8 @@ gem 'devise'
 gem 'devise_invitable'
 gem 'foreman'
 gem 'haml'
-gem 'turbolinks'
+gem 'hotwire-rails'
+gem 'image_processing'
 
 # Omniauth Gems
 gem 'omniauth-oauth2'

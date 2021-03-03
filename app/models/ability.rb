@@ -2,6 +2,9 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    can :manage, Room
+    can :manage, Message
+
     cannot :access, :admin
 
     user ||= User.new
